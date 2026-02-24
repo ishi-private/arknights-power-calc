@@ -3,24 +3,21 @@
 アークナイツ キャラ火力計算ツールのフォルダ構成。
 
 ```
-arknights-power-calc/               ← リポジトリルート
-│
-├── STRUCTURE.md                    ← このファイル（構成管理）
-├── .gitattributes
-│
-├── .claude/                        ← Claude Code 設定（要 repo ルートから起動）
+arknights-power-calc/
+├── .claude/
 │   └── settings.local.json
-│
-├── app/                            ← アプリケーションコード
-│   └── power_calc.py               ← 火力計算メインスクリプト
-│
-└── src/                            ← データファイル
-    ├── arknights_star6.csv         ← 6★キャラ一覧（126体、信頼度ボーナス込み）
-    ├── calc_log.txt                ← 計算結果ログ（実行時に自動生成・追記）
-    ├── images/                     ← キャラクター画像（126ファイル、.png）
-    │   └── {キャラ名}.png
-    └── xlsx/                       ← キャラ別スキルデータ（115ファイル）
-        └── {キャラ名}.xlsx
+├── app/
+│   ├── power_calc.py
+│   └── update_structure.py
+├── src/
+│   ├── .claude/
+│   │   └── settings.local.json
+│   ├── images/  （126 ファイル）
+│   ├── xlsx/  （115 ファイル）
+│   └── arknights_star6.csv
+├── .gitattributes
+├── .gitignore
+└── STRUCTURE.md
 ```
 
 ## 各ファイルの説明
@@ -31,6 +28,12 @@ Python 製 CLI ツール。主な機能：
 - ダメージ計算（物理 / 術、軽減前・軽減後・総ダメージ・DPS）
 - 計算結果を `src/calc_log.txt` にタイムスタンプ付きで追記
 - 実行: `python app/power_calc.py`（リポジトリルートから）
+- 実装詳細: `app/power_calc_doc.md` を参照
+
+### app/power_calc_doc.md
+`power_calc.py` の実装内容・ロジックのドキュメント。
+関数一覧・スパース xlsx 解析アルゴリズム・ダメージ計算式・データ構造・制限事項を記載。
+コードを変更した際は合わせて更新すること。
 
 ### src/arknights_star6.csv
 列構成: 画像, 名前, 職業, 職分, HP, 攻撃力, 防御力, 術耐性, 再配置, コスト, ブロック数, 攻撃速度, 入手方法, 募集タグ
