@@ -8,13 +8,15 @@ arknights-power-calc/
 │   └── settings.local.json
 ├── app/
 │   ├── power_calc.py
+│   ├── power_calc_doc.md
 │   └── update_structure.py
 ├── src/
 │   ├── .claude/
 │   │   └── settings.local.json
 │   ├── images/  （126 ファイル）
 │   ├── xlsx/  （115 ファイル）
-│   └── arknights_star6.csv
+│   ├── arknights_star6.csv
+│   └── calc_log.txt
 ├── .gitattributes
 ├── .gitignore
 └── STRUCTURE.md
