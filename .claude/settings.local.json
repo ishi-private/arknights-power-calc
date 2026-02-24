@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"F:/プログラム置き場/arknights-power-calc/arknights-power-calc/src\" && echo \"スルト\n3\n特化III\n1\n0\n1\" | python power_calc.py 2>&1)"
+    ]
+  }
+}
